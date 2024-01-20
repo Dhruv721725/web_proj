@@ -1,0 +1,35 @@
+{% extends "base.html"%}
+{% block title %}Update{% endblock title %}
+{% block style %}
+<style>
+fieldset{height: 500px;
+    width: 280px;
+background-color: rgba(0, 0, 0, 0.7);
+border-radius: 10px;}
+.inp{background-color: black;
+    color: rgb(255,160,0);}
+#but{
+    width: 280px;
+    color:rgb(255,160,0);
+    background-color: black;    
+}
+</style>
+{% endblock style %}
+{% block body %}
+<h1>Update Your Memories</h1>
+<hr color="green">
+<hr color="green">
+<form action="#" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset>
+        <legend>Recipies here</legend>
+        <h2>Recipe name:</h2>
+        <input type="text" name="rname" maxlength="50" class="inp" value={{data.name}}><br>
+        <h2>Recipe description:</h2>
+        <textarea name="rdesc" cols="30" rows="10" class="inp">{{data.desc}}</textarea><br>
+        <h2>Image of memory:</h2>
+        <input type="file" name="rimage" class="inp" value="{{data.img}}"><br><br>
+        <input type="submit" value="submit" id="but">
+    </fieldset>
+</form>
+{% endblock body %}
