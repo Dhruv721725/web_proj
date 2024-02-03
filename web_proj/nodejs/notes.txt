@@ -1,0 +1,39 @@
+Globals - no window !!!
+__dirname   - path to current directory
+__filename  - file name
+require     - function to use modules(common js)
+modules     - info about current module(file)
+process     - info about env where the prgrm is being executed
+
+__Modules in node__
+Every file in a node is a module.
+Modules - Encapsulated code (only share minimum).
+to export module data we need to append objects in module.exports
+ex:module.exports={n1,n2}
+where n1 and n2 are 2 variables
+
+__Built in modules__
+os
+path 
+fs
+http 
+for built in modules we n eed not give relative path
+ex: require('os')
+
+NPM (nutty professor movie):
+    npm - global command comes with node
+    npm --version
+
+    local dependency - use it only in this particular project
+    npm i <packages> (it is basically like using that particular package in that env only 
+                        outside that env it has no use.)
+
+    global depenendency - use it in any project
+    npm install -g <package name>
+    sudo npm install -g <package name> (mac)
+    (we can use it any where in our pc for creating different projects.)
+
+package.json - manifest file (stores imp info about project/package)
+manual approach (create package.json in the root, create properties etc)
+npm init (step by step, press enter to skip)
+npm init -y (everything default) 
