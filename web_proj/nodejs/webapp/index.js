@@ -1,6 +1,6 @@
 // __loading home page html file__ 
 const {readFileSync}=require('fs')
-const cont=readFileSync('./home.html','ascii')
+const cont=readFileSync('./webapp/home.html','ascii')
 
 // __creating server and sending response__
 const http=require('http')

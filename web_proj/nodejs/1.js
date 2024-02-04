@@ -58,16 +58,91 @@
 //     })
 // })
 
-// __HTTP module__
-const http=require('http')
-// __here we are creating a server at port 5000__
-const server=http.createServer((req,res)=>{
-    // console.log(req)
-    const text='<h1>welcome to our homepage</h1>'
-    if (req.url ==='/home' || req.url ==='/'){
-        res.end(text)
-    }
-    res.end()
-    // console.log(req)
-})
-server.listen(5000)
+// // __HTTP module__
+// const http=require('http')
+// // __here we are creating a server at port 5000__
+// const server=http.createServer((req,res)=>{
+//     // console.log(req)
+//     const text='<h1>welcome to our homepage</h1>'
+//     if (req.url ==='/home' || req.url ==='/'){
+//         res.end(text)
+//     }
+//     res.end()
+//     // console.log(req)
+// })
+// server.listen(5000)
+
+
+// const load=require('lodash')
+// const items=[1,[2,[3,[4]]]]
+// const nitems=load.flattenDeep(items)
+// console.log(nitems);
+// --------------------------------------------------------
+// const {readFile}=require('fs')
+// const util=require('util')
+
+// const readFilePromise=util.promisify(readFile)
+// --------------------------------------------------------
+// const getText=(path)=>{
+//     return new Promise((resolve,reject)=>{
+//         readFile(path,'ascii',(err,rslt)=>{
+//             if (err){
+//                 reject(err)
+//             }else{
+//                 resolve(rslt)
+//             }
+//         })
+//     })
+// }
+// getText('./notes.txt')
+//     .then((result)=>console.log(result))
+//     .catch((err)=>console.log(err))
+// --------------------------------------------------------
+// const start=async ()=>{
+//     try{
+//         const first= await getText('./t1.txt')
+//         const sec= await getText('./t2.txt')
+//         console.log(first,sec)
+//     }catch (error){
+//         console.log(error)
+//     }
+// }
+// start()
+
+// // __EVENTS__
+// const EventEmmiter = require('events')
+// const customEmitter=new EventEmmiter()
+
+// customEmitter.on('response',(name, id)=>{
+//     console.log('data received '+name+" "+id)
+// })
+// // we can append logic to predefined events.
+// customEmitter.on('response',()=>{
+//     console.log('data is being received')
+// })
+// customEmitter.emit('response',"Dhruv",11)
+
+// const http=require('http')
+// const server=http.createServer()
+// server.on("request",(req,res)=>{
+//     res.end("<h1>WELCOME</h1> <hr color=red>")
+// })
+
+// server.listen(8000)
+
+// const {writeFileSync}=require('fs')
+// for (let i=1;i<10001;i++){
+//     writeFileSync('./t3.txt','hello world this is line no.:'+i+'\n',{flag:'a'})
+// }
+
+// const {createReadStream}=require('fs')
+// const stream = createReadStream('./t3.txt',{highWaterMark:50000,encoding:'utf8'})
+// stream.on('data',(result)=>{
+//     console.log(result)
+// })
+// in output we can easily see that data comes in the form of chunks.
+// by default buffer size is 64 kbs
+// we can define a size using ,{highWaterMark:9000} now the size would be 8950 bytes.
+// we can add encoding type as well ,{encoding:'utf8'}
+
+

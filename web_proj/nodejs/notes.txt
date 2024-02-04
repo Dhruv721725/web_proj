@@ -37,3 +37,51 @@ package.json - manifest file (stores imp info about project/package)
 manual approach (create package.json in the root, create properties etc)
 npm init (step by step, press enter to skip)
 npm init -y (everything default) 
+
+to create devDependency:
+    cmd:    npm i <package> -D/
+            npm i <package> --save-dev
+
+we need to install modules:
+    1. lodash <only dependency>
+    2. nodemon <as devDependency> 
+    this module helps in autostart of prgrm when prgrm file is updated.
+    3. bootstrap <only dependency>
+
+we can create multiple vars in "scripts" objective array
+so that by only typing "npm <var>" in console our commands will execute.
+ex:
+    in package.json 6th line 
+    "scripts":{
+        "start"(var): "node webapp/index"(command)
+    }
+imp: we need to give path at every place 
+     even in js file, relative to {}package.json. 
+
+for execution of nodemon:
+    in package.json 6th line 
+    "scripts":{
+        "dev"(var): "nodemon webapp/index"(command)
+    }
+
+//npx create-react-app my-app
+//cd my-app
+//npm start
+npx is a package runer tool that comes with npm 5.2+
+
+//EVENT LOOP:
+    allows node.js to perform non-blocking i/o operations 
+    though js is single threaded- by offloading operations 
+    to the system kernel whenever possible.
+
+we should always try to write our code for async operation so that 
+there would be no issue due to blocking code.
+
+//STREAMS:
+    we use it when file is much bigger 
+    so that our data can be streamed instead of loading all data at once.
+    writeable
+    readable
+    duplex
+    transform
+
