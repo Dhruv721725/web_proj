@@ -1,13 +1,17 @@
 const http=require('http')
 const {readFileSync}=require('fs')
 
-
+const style=readFileSync('./app/theme.css')
 const server=http.createServer((req,res)=>{
     const url=req.url;
     if (url==='/'||url==='/home/'){
         const home=readFileSync('./app/home.html','ascii')
         res.writeHead(200,{'content-type':'text/html'})
-        res.write(home)        
+        res.write(home)
+        if (req.method=='POST'){
+            // const data=req.POST.get('name')
+            // console.log(data) 
+        }        
     }
     else if (url==='/services/'){
         const services=readFileSync('./app/services.html','ascii')
@@ -29,10 +33,15 @@ const server=http.createServer((req,res)=>{
         res.writeHead(200,{'content-type':'text/html'})
         res.write(help)        
     }
+    else if (url==='/home/theme.css'||url==='/theme.css'){
+        res.writeHead(200,{'content-type':'text/css'})
+        res.write(style)        
+    }
     else{
         res.writeHead(404,{'content-type':'text/html'})
         res.write("<h1><center>page not found</center></h1>")
     }
+    console.log(req.url);
     console.log('user hit the server')
     res.end()
 })

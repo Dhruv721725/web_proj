@@ -122,24 +122,23 @@
 // })
 // customEmitter.emit('response',"Dhruv",11)
 
-// const http=require('http')
-// const server=http.createServer()
-// server.on("request",(req,res)=>{
-//     res.end("<h1>WELCOME</h1> <hr color=red>")
-// })
-
-// server.listen(8000)
-
 // const {writeFileSync}=require('fs')
 // for (let i=1;i<10001;i++){
 //     writeFileSync('./t3.txt','hello world this is line no.:'+i+'\n',{flag:'a'})
 // }
 
+// const http=require('http')
 // const {createReadStream}=require('fs')
+// const server=http.createServer()
+// server.on("request",(req,res)=>{
+//     res.end("<h1>WELCOME</h1> <hr color=red>")
+// })
+// server.listen(8000)
 // const stream = createReadStream('./t3.txt',{highWaterMark:50000,encoding:'utf8'})
 // stream.on('data',(result)=>{
 //     console.log(result)
 // })
+
 // in output we can easily see that data comes in the form of chunks.
 // by default buffer size is 64 kbs
 // we can define a size using ,{highWaterMark:9000} now the size would be 8950 bytes.

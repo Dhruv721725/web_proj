@@ -85,3 +85,59 @@ there would be no issue due to blocking code.
     duplex
     transform
 
+//EVENT EMITTERS
+event emitters are the kind of modules function that we need to implement in our 
+js files they run by them self when prgrm runs
+we can run rhem by call ing them as well
+first we need to import module ex:
+const http=require('http')
+const server= http.createServer()
+//emit
+server.on('request',(req,res)=>{
+    console.log("user hi the server");
+})
+we can also stream in the same way ex:
+server.listen(8000)
+const stream = createReadStream('./t3.txt',{highWaterMark:50000,encoding:'utf8'})
+stream.on('data',(result)=>{
+    console.log(result)
+})
+in output we can easily see that data comes in the form of chunks.
+by default buffer size is 64 kbs
+we can define a size using ,{highWaterMark:9000} now the size would be 8950 bytes.
+we can add encoding type as well ,{encoding:'utf8'}
+------------------------------------------------------------------------------------
+\\__!!!__EXPRESS.JS__!!!__//
+Express is a minimal and flexible webapp framework of nodejs 
+it is not the built in module
+to install:
+    cmd: npm install express --save
+    (can't share on git hub)
+    for particular version:
+    cmd: npm install express@4.17.1 --save
+const express = require ('express'):
+const app = express()
+methods:
+    app.get()
+    app.post()
+    app.put()
+    app.delete()
+    app.all()
+    app.use()
+    app.listen()
+// dealing with known urls
+app.get('/',(req,res)=>{
+    res.sendFile(path.resolve(__dirname,'./app/home.html'))
+})
+
+// dealing with unknown urls
+app.all('*',(req,res)=>{
+    res.status(404).send('resource not found')
+})
+
+// starting server
+app.listen(5000,()=>{
+    console.log('user hit server at 5000port')
+})
+
+
