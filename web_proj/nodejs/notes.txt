@@ -17,7 +17,7 @@ os
 path 
 fs
 http 
-for built in modules we n eed not give relative path
+for built in modules we need not give relative path
 ex: require('os')
 
 NPM (nutty professor movie):
@@ -39,7 +39,7 @@ npm init (step by step, press enter to skip)
 npm init -y (everything default) 
 
 to create devDependency:
-    cmd:    npm i <package> -D/
+    cmd:    npm i <package> -D /
             npm i <package> --save-dev
 
 we need to install modules:

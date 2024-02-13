@@ -10,6 +10,7 @@ class Recipies(models.Model):
     def __str__(self):
         return self.name
 
+
 class Department(models.Model):
     department=models.CharField(max_length=20)
     date_of_establishment='26/1/2023'

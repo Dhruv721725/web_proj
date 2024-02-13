@@ -23,6 +23,7 @@ def home(req):
     
     context={'data':data}
     return render(req,'recipies.html',context)
+
 def upload(req):
     if req.method =='POST':
         data=req.POST
@@ -107,7 +108,7 @@ def register(req):
 
 def logout_page(req):
     logout(req)
-    messages.info(req,'successfully logout')
+    messages.info(req,'successfully loged out')
     return redirect('/login/')
 
 def get_st(req):
