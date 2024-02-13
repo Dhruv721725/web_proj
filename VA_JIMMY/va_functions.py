@@ -80,7 +80,7 @@ def lstn():
         r.energy_threshold=1500
         aud=r.listen(src)
     try:
-        print(f"recognizing...")
+        print("recognizing...")
         q=r.recognize_google(aud,language="en-in")
         print(q)
         return q
@@ -117,5 +117,11 @@ def undo():
     shortcut_key("ctrl","z")
 def redo():
     shortcut_key("ctrl","y")
-def window():
+def min_all():
     shortcut_key("win","d")
+def sel_all():
+    shortcut_key("ctrl","a")
+def delete():
+    ptg.keyDown("del")
+    ptg.keyUp("del")
+

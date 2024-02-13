@@ -1,0 +1,84 @@
+java script is a both programming and scripting language
+java script was developed in 5 days
+it is an interpreter based language
+
+//BROWSER
+layout engine
+renders html ,css
+Js engine
+renders js
+
+//data types
+primitive: which can not be divide further
+ex: string, number, boolean, undefined, null, bigint
+
+three types implementation
+intenal, inline, console
+
+console is a web api
+disadvantages 
+not sharable , temporary
+
+we need external files due to SOC (separation of concerns) 
+<script src=".js file path"></script>
+var, let, const are used to create variablez
+variables properties
+can not start with no.s and symbols
+case sensitive
+no spaces
+keywords can't be used as vars
+"_" and $ can be used even in start also
+ways of defining variables
+ex:
+    let firstname= "shinchan nohara" (normal case)
+    let firstName= "shinchan nohara" (camel case)
+    let first_name= "shinchan nohara" (snake case)
+    let f-name= "shinchan nohara" (kebab case(not allowed in js))
+
+//concatenation
+let fn="Gabbar"
+let ln= "Singh"
+console.log(fn+" "+ln)
+
+methods of writing string
+"",'',
+``(tilde,back ticks,template literals, string literals)
+let s1="hi"
+let s2='hi'
+let s3=`s1=${s1} s2=${s2}` (used to created formatted string)
+
+// number
+let num=10
+operations(+,-,*,/,**,%,//)
+
+to get max length of chars a datatype can hold
+console.log(Number.MAX_INT_VALUE)
+
+JS dosen't support negative indexing
+ex: str[-5](not supported)
+
+in js we need not to tell datatype during defining variables
+so its a "weakly typed language"
+Js is interpreted, weakly typed ,p/s language
+in js variables data type is evaluated at a time of run time, (dynamic language)
+
+Js is interpreted, weakly typed ,dynamically typed, p/s language
+undefined refers neither js nor user knows the data type
+for ex: 
+    let s;
+    console.log(s)
+    it will give undefined data type
+
+string methods:
+    substr(depricated)
+    substring
+    indexof
+    replace
+    replaceall
+    repeat
+    touppercase
+    tolowercase
+    trim()
+
+
+

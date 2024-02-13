@@ -31,8 +31,49 @@ while True:
 
                 elif "close" in l:
                     n=l.index("close")
-                    close(l[n+1:])
+                    # close(l[n+1:])
+                
+                elif "copy" in l:
+                    copy()                
 
+                elif "cut" in l:
+                    cut()
+
+                elif "paste" in l:
+                    paste()
+                
+                elif "minimize" in l:
+                    i=l.index("minimize")
+                    if l[i+1]=="all":
+                        min_all()
+                
+                elif "undo" in l:
+                    undo()
+
+                elif "redo" in l:
+                    redo()
+
+                elif "close" in l:
+                    i=l.index("close")
+                    if l[i+1]=="it":
+                        close()
+                    elif l[i+1]=="all":
+                        for i in range(queries+1):
+                            close()
+                    else:
+                        close()
+                
+                elif "select" in l:
+                    i=l.index("select")
+                    t=l[i+1] 
+                    if t=="all":
+                        sel_all()
+                    else:
+                        sel_all()
+
+                elif "delete" in l:
+                    delete()
+                                    
                 elif "find" in l:
                     n=l.index("find")
                     file=l[n+1]
