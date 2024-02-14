@@ -71,14 +71,37 @@ for ex:
 
 string methods:
     substr(depricated)
-    substring
+    this method provides substring
+    let st="asdfgh"
+    console.log(st.substr(2)) //it will give string from index to to end
+    console.log(st.substr(2,5)) //console.log(st.substr(2)) //it will give string from index to the defined index from 2 to 5
+    
     indexof
+    it gives the index of a str in main str
+    let st= "asdafgha"
+    console.log(st.indexof('a')) //it will give index of str in main string
+    console.log(st.index of("a",3))) //it will give index of str after defined index in main index
     replace
-    replaceall
+    let st= "asdafgha"
+    console.log(st.replace('a','n')) //it will give str where first encountered str will be replaced with defined str
+
+    replaceAll
+    let st= "asdafgha"
+    console.log(st.replaceAll('a','n')) //it will give str where all encountered str will be replaced with defined str
+
     repeat
+    console.log(st.repeat(5))//repeat the str 5 times
+    
     touppercase
     tolowercase
     trim()
+
+    // general equality (==) checks values only vs strict equality (===) check dta types as well
+    js is full of exceptions
+    here null and " "(empty string) , 0 is = false
+
+typeof () //is used to find data type of 
+
 
 
 

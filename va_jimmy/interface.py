@@ -1,5 +1,3 @@
-import pyautogui as ptg
-import time
 # from tkinter import *
 # from PIL import ImageTk,Image
 # root=Tk()
@@ -16,7 +14,3 @@ import time
 
 
 # root.mainloop()
-
-from va_functions import *
-time.sleep(3)
-

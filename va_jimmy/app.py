@@ -1,4 +1,4 @@
-from va_functions import *
+from func import *
 
 #start of body
 while True:
@@ -72,7 +72,12 @@ while True:
                         sel_all()
 
                 elif "delete" in l:
-                    delete()
+                    spk("are you sure")
+                    ans=lstn()
+                    if str(ans).lower() == 'yes':
+                        delete()
+                    else:
+                        spk("ok")
                                     
                 elif "find" in l:
                     n=l.index("find")
