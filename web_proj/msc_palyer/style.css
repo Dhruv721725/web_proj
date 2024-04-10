@@ -1,0 +1,32 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+
+#player{
+    background-color: rgb(255,160,0);
+    width: 480px;
+    height: 480px;
+    margin: 50px auto;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: column;
+    justify-content: space-evenly;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+img{
+    border-radius: 50%;
+}
+
+section{
+    display: flex;
+    height:30px;
+    width: 100%;
+    justify-content: space-around;
+}
+body{
+    background-color: black;
+}

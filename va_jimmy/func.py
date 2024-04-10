@@ -8,6 +8,8 @@ import time
 import AppOpener as ao
 import pyautogui as ptg
 from englisttohindi.englisttohindi import EngtoHindi
+import wikipedia as wk
+# it is to find files inside pc
 def fin(p,f):
     l=[]
     dir=os.listdir(p)
@@ -33,7 +35,7 @@ def fin(p,f):
         except NotADirectoryError as e:
             pass
     return l
-
+# it is to search things over browser
 def fout(url):    
     if url=="youtube":
         url="http://www.youtube.com"
@@ -44,7 +46,7 @@ def fout(url):
     elif url=="python":
         url="https://www.python.org"
     wb.open_new(url)
-    
+# it is to speak
 def spk(vc):
     e=pyttsx3.init()
     a=e.getProperty("voices")
@@ -53,17 +55,17 @@ def spk(vc):
     e.setProperty("volume",1.0)# setting volume
     e.say(vc)# speaking
     e.runAndWait()
-
+# it is to greet
 def wish():
     t=str(dt.datetime.now())
     a=t.split(" ")
     h=int((a[1].split(":"))[0])
     m=int((a[1].split(":"))[1])
-    if h>0 and h<12:
+    if h>=0 and h<12:
         return("Good morning")
-    elif h>12 and h<18:
+    elif h>=12 and h<18:
         return("Good afternoon")
-    elif h>18 and m<1:
+    elif h>=18 and m>1:
         return("Good evening")
     
 def open(src):
@@ -82,17 +84,14 @@ def lstn():
     try:
         print("recognizing...")
         q=r.recognize_google(aud,language="en-in")
-        print(q)
         return q
     except Exception:
-        print("voivce not recognized")
-        return "none"
+        print("voice not recognized")
+        return " "
 
 def translate(st):
     res=EngtoHindi(st)
     return res.convert
-
-
 
 # shortcuts
 def write(st):
@@ -124,4 +123,15 @@ def sel_all():
 def delete():
     ptg.keyDown("del")
     ptg.keyUp("del")
+def ss():
+    ptg.keyDown("win")
+    ptg.keyDown("prtscr")
+    ptg.keyUp("win")
+    ptg.keyUp("prtscr")
 
+# wikipedia api
+def query(req):
+    res=wk.search(req)
+    pg=wk.page(res[0])
+    summary=pg.summary
+    return summary

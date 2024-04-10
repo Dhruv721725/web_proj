@@ -1,3 +1,5 @@
+PEPCODING (you tube)
+
 java script is a both programming and scripting language
 java script was developed in 5 days
 it is an interpreter based language
@@ -13,7 +15,7 @@ primitive: which can not be divide further
 ex: string, number, boolean, undefined, null, bigint
 
 three types implementation
-intenal, inline, console
+internal, inline, console
 
 console is a web api
 disadvantages 
@@ -73,14 +75,14 @@ string methods:
     substr(depricated)
     this method provides substring
     let st="asdfgh"
-    console.log(st.substr(2)) //it will give string from index to to end
-    console.log(st.substr(2,5)) //console.log(st.substr(2)) //it will give string from index to the defined index from 2 to 5
+    console.log(st.substr(2)) //it will give string from defined index to end
+    console.log(st.substr(2,5)) //it will give string from index to the defined index from 2 to 5
     
     indexof
     it gives the index of a str in main str
     let st= "asdafgha"
     console.log(st.indexof('a')) //it will give index of str in main string
-    console.log(st.index of("a",3))) //it will give index of str after defined index in main index
+    console.log(st.index of("a",3)) //it will give index of str after defined index in main index
     replace
     let st= "asdafgha"
     console.log(st.replace('a','n')) //it will give str where first encountered str will be replaced with defined str
@@ -96,11 +98,228 @@ string methods:
     tolowercase
     trim()
 
-    // general equality (==) checks values only vs strict equality (===) check dta types as well
+    // general equality (==) checks values only vs strict equality (===) check data types as well
     js is full of exceptions
     here null and " "(empty string) , 0 is = false
 
 typeof () //is used to find data type of 
+
+using different classes in js
+ex: Math.Pi;
+Math.round(32.7)<gives 33>
+Math.ceil(32.7)<gives 33>
+Math.floor(32.7)<gives 32>
+let a=1
+let b=2
+let c=3
+
+Math.min(a,b,c)
+Math.max(a,b,c)
+
+creating a dice:
+    let d= Math.random();
+    let v= Math.ceil(d*6);
+    console.log(v);
+taking input using prompt
+
+let p=prompt("enter a no.")
+type casting
+let p = parseInt(prompt("Enter a no."));
+
+as js is an interpreted language it will continue to run until prompt isn't submitted.
+
+if {} are not given in conditional statements only line after the conditional statement will be executed under it.
+
+//arrays
+list,tuple(python)=>arrays,arraylist(js)=>arrays,vectors(c++)
+arrays in js can support multiple data types
+ex:
+    let arr=[1,2,3,"hello",[1,2,3],obj={}]
+methods : destructive(manipulates original array), non-destructive ()
+to convert str into array we use split function
+
+destructive
+    splice
+    pop
+    push
+    shift
+    unshift
+
+non-destructive
+    slice(it can take negative index)
+    join
+    includes
+    concat
+    indexof
+
+arrays are of reference type.
+here variable is the one who contains the address due to this arrays are mutable.
+while in string instead of variable "string" points to that address due to this it is immutable.
+\\!!!Everything inside js is object!!!//
+
+objects is the data structure in which we store data in the form of key value pairs.
+it is unordered.
+to store values we use keys:
+ex: 
+    let obj={
+        name:"Dhruv",
+        age:19
+    };
+to call particular value we do:
+    console.log(obj.name) <it will give "Dhruv">
+    console.log(obj.["name"]) <it will give "Dhruv">
+    in objects everything store as an string.
+in array it is hard to manage data, obj takes a lead here.
+objects are also refference type.
+functions inside objects are methods.
+ex:
+    let obj={
+        name:"Dhruv",
+        age:19,
+        fun:fuction(){
+            console.log("hi the ruler is here.");
+            console.log(`${this.name} is here to rule`);        
+        }
+    }
+
+//loops 
+while
+do while
+for
+for in 
+for of
+while(condition){
+    code
+}
+for(let i=1;i<11;i++){
+    if(i%2!=0){
+        console.log(i);
+    }
+}
+methods are functions assigned inside objects, they are called with <obj.func()>
+in js functions always return something
+for ex :
+    function greet(){
+        console.log("its a non-fruitful function");    
+    }
+    let r= greet()
+    console.log(r) //gives undefined
+assigning of nested function:
+    function greet2(){
+        console.log("its a no fruitful function");    
+        function wish(){
+            console.log("good morning")
+        }
+        return wish
+    }
+    let greet2=greet()
+    //wish() <it will give an error as wish does not have global scope>
+    greet2() //it will give good morning
+    
+arrow functions:
+    
+    let fun=()=>{
+        console.log("chill mode always on.")   
+    }
+    fun() //output: chill mode always on.
+
+parameter functions:
+    let fun=(user)=>{
+        let st=`oye! {user} chill mode always on.`
+        console.log(st)   
+    }
+    fun("Dhruv") //output: oye! Dhruv chill mode always on.
+
+giving function as an argument:
+    (higher order function<fn>, here fn must be called)
+    function calc(a,b,fn){
+        return fn(a,b)
+    }
+    (callback function<fn>, here fn must be called)
+    function sum (a,b){
+        return a+b
+    }
+
+    calc(2,5,sum) // output: 7
+best example
+    let arr=[1,2,3,4,5,6,7,8]
+    let ans=arr.filter((item)=>{return item % 2==0})
+js is an interpreted weakly typed dynamically typed synchronous programming language.
+higher order functions either return or accepts the call back functions.
+____________________
+!!! ASYNCHRONOUS !!!
+____________________
+web api are provided by browsers:
+setTimeout 
+console
+setInterval
+
+call back stack(synchronous function runs here one by one)
+event loops
+web api(async functions occur here together)
+call back queue(it stores the returns of call back funcs)
+
+example:
+    console.log("pheli code line")
+    setTimeout(
+        ()=>{
+            console.log("doosri code line.")
+        },5000
+    )
+    console.log("teesri code line.")
+    /*output will be
+phel code line
+teesri code line
+doosri code line    
+*/
+
+setTimeout(
+        ()=>{
+            console.log("pheli code line.")
+        },4000
+    )
+setTimeout(
+        ()=>{
+            console.log("doosri code line.")
+        },2000
+    )
+
+/*
+output:
+doosri code line
+pheli code line
+*/
+
+for geting sync behaviour in web api, uses nested setTimeout statements
+setTimeout(
+        ()=>{
+            console.log("pheli code line.");
+            setTimeout(
+                ()=>{
+                    console.log("doosri code line.")
+                    },2000
+                )
+        },2000
+    )
+
+_____________
+!!! D O M !!!
+_____________
+
+selecting elements (document.getElementBy...):
+    Id
+    Class
+    Tagname
+    QuerySelector
+    QuerySelectorAll
+
+    operations
+    create 
+    read 
+    update 
+    delete 
+    
+
 
 
 
