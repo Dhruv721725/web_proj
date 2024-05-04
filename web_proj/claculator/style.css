@@ -1,0 +1,61 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: black;
+}
+#calc{
+    width:400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: black;
+}
+
+#display{
+    flex-grow:1;
+    background-color: black;
+    border:none;
+    outline: none;
+    color: white;
+    font-size: 50px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+.btns{
+    flex-grow: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+button{
+    border-radius: 50%;
+    height: 80%;
+    width: 80%;
+    border: none;
+    background-color: rgb(58, 57, 57);
+    color:white;
+    font-size: 24px;
+}
+
+button:active{
+    scale: .85;
+    transition-duration: .3s;
+}
+.lght{
+    background-color: rgb(208, 199, 199);
+    color: black;
+}
+.orng{
+    background-color: rgb(255, 115, 0);
+}
+#z{
+    grid-column: span 2;
+    
+    border-radius: 40px;
+    text-align: start;
+    padding-left: 40px;
+}
