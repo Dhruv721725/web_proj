@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Memories{% endblock title %}
+{% block style %}
+<style>
+    input{background-color: black;
+        color: rgb(255, 160, 0);
+    }
+</style>
+{% endblock style %}
+{% block body %}
+<h1>Memories</h1>
+<hr color=green>
+@{{request.user}}
+<hr color=red>
+<br><br>
+<form action="#" method="get">
+<input type="text" name="search" placeholder='search here' size="30" value="">
+<input type="submit" value="Submit" class="btn btn-Primary">
+</form>
+<br><br><br><br>
+
+<table width=100% border='solid' cellpadding=10px>
+{% for m in data %}
+<tr>
+    <td rowspan=2>{{forloop.counter}}</td>
+    <td>{{m.name}}</td>
+    <td>{{m.desc}}</td>
+    <th rowspan=2><img src='/media/{{m.img}}' alt={{m.img}} height= 200px></th>
+    <td bgcolor=green>
+        <a href="/upd_rcp/{{m.id}}" class="btn" >Update</a>
+    </td>
+    <td bgcolor='red'>
+        <a href="/del_rcp/{{m.id}}" class="btn" >Delete</a>
+    </td>
+</tr>
+<tr>
+    
+{% endfor %}
+</table>  
+
+{% endblock body %}

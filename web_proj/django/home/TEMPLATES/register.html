@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock title %}
+{% block style %}
+<style>
+    fieldset{height: 450px;
+        width: 280px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;}
+    .inp{background-color: black;
+        color: rgb(255,160,0);}
+    #but{
+        width: 280px;
+        color:rgb(255,160,0);
+        background-color: black;    
+    }
+    </style>
+    {% endblock style %}
+    {% block body %}
+    <h1>Register</h1>
+    <hr color="green">
+    <hr color="red">
+    <form action="#" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Register here</legend>
+            <ul class='messages'>
+            {%for i in messages%}
+            <li>{{i}}</li>
+            {%endfor%}
+            </ul>
+            <h2>User Name:</h2>
+            <input type="text" required name="usrname" maxlength="50" class="inp"><br>
+            <h2>Name:</h2>
+            <input type="text" required name="name" maxlength="50" class="inp"><br>
+            <h2>Email Id:</h2>
+            <input type="email" required name="email" class="inp">
+            <h2>Password:</h2>
+            <input type="password" name="pass" class="inp"><br><br>
+            <input type="submit" value="submit" id="but">
+        </fieldset>
+    </form>
+    <p>Allready have an account! <a href='/login/'> LogIn </a></p>
+    {% endblock body %}

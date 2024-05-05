@@ -1,19 +1,27 @@
 
 // let crsong=new Audio(`./music/${songs[sng]}.mp3`)
+<<<<<<< HEAD
 // import {b} from "./songs.py";
 
+=======
+let os = require('os');
+>>>>>>> b1
 
 let songs=['A_Dreamers_Rap','A_Thousand_Years','9_45','Aarambh_Hai','Achyutam_Keshavam','Aik_din_Aap']
 let sng=0
 
 let crsong=new Audio(`./music/${songs[sng]}.mp3`)
 
+<<<<<<< HEAD
 // let volm=document.getElementById('volm')
+=======
+>>>>>>> b1
 let sname=document.getElementById('sname')
 let prev=document.getElementById('prev')
 let play=document.getElementById('play')
 let next=document.getElementById('next')
 let pbar=document.getElementById('pbar')
+<<<<<<< HEAD
 let vbar=document.getElementById('vbar')
 let shfl=document.getElementById('shfl')
 let cycl='repeat'
@@ -21,17 +29,27 @@ let cycl='repeat'
 sname.innerText=songs[sng]
 pbar.value=0
 vbar.value=50
+=======
+
+sname.innerText=songs[sng]
+pbar.value=0
+>>>>>>> b1
 
 function next_song(){
     sng++;
     if(sng>=songs.length){
         sng=0
     }
+<<<<<<< HEAD
     if (cycl=='shuffle'){
         sng=Math.round((Math.random(0,1)*(songs.length-1)))
         console.log(sng);
     }
     sname.innerText=songs[sng]
+=======
+    sname.innerText=songs[sng]
+
+>>>>>>> b1
     crsong.src=`./music/${songs[sng]}.mp3`
     crsong.play()
     play.classList.replace('fa-play','fa-pause')
@@ -71,6 +89,7 @@ pbar.addEventListener('change',()=>{
 crsong.addEventListener('timeupdate',()=>{
     pbar.value=(crsong.currentTime/crsong.duration)*100
     if (crsong.currentTime>=crsong.duration){
+<<<<<<< HEAD
         if (cycl=='1'){
             crsong.currentTime=0
             crsong.play()
@@ -116,3 +135,10 @@ shfl.addEventListener('click',()=>{
 // })
 
 // console.log(json.parse(b))
+=======
+        next_song()
+    }
+})
+
+console.log(os.tmpdir)
+>>>>>>> b1

@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>Digital Clock</title>
+        <style>
+            fieldset{
+                width: 540px;;
+                height: 290px;
+                border-radius: 20px;
+                padding: 20px;
+                border:2px solid rgb(255, 196, 0)
+            }
+            #bg{
+                border-radius: 20px;
+                border:2px solid blueviolet;
+                background-color: black;
+                background-size: cover;
+                height: 250px;
+                width: 500px;
+                margin: auto;           
+                display: flex;
+                justify-content: center;
+            }
+            #box,span{
+                background: rgba(255, 255, 255, 0.674);
+                border-radius: 5px ;
+                font-size: 50px;
+                color:rgb(255, 149, 0);
+                margin: auto;}
+            b{ margin: auto }
+            #box{
+                padding-right: 10px;
+                height:125px;
+                width: 250px;
+                display: flex;
+                justify-content: center;
+                }
+            input,legend{
+                background-color: black;
+                color: rgb(255, 196, 0);
+                border-radius: 5px;
+                height: 30px;
+            }          
+        </style>
+    </head>
+    <body>
+        <fieldset hidden>
+            <legend>Enjoy Every Second</legend>
+            <div id="bg">
+                <div id="box">
+                    <span id="od"></span><br>
+                    <span id="hr"></span><b>:</b>
+                    <span id="min"></span><b>:</b>
+                    <span id="sec"></span>
+                </div>
+            </div>
+    </fieldset>
+    <input type="button" name="time" value="click me">
+    <p></p>
+    </body>
+    <script>
+        let tf=document.getElementsByTagName("fieldset")[0]
+        let bt=document.getElementsByTagName("input")[0] 
+        let a=document.getElementById("hr")
+        let b=document.getElementById("min")
+        let c=document.getElementById("sec")
+        let f="i am running continuously"
+        let n=1
+        bt.onclick=()=>{
+            if (n==1){
+            tf.hidden=false;
+            bt.value="hide";
+            n=0}
+            else{
+            tf.hidden=true;
+            bt.value="show time"; 
+            n=1}
+        }
+        setInterval((f="hi")=>{
+            let t=new Date
+            a.innerHTML=t.getHours();
+            b.innerHTML=t.getMinutes();
+            c.innerHTML=t.getSeconds();
+            console.log(f)
+        },1000)
+    </script>
+</html>

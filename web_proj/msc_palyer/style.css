@@ -5,8 +5,11 @@
 
 #player{
     background-color: rgb(255,160,0);
+<<<<<<< HEAD
     background-color: rgb(255,160,0);
     
+=======
+>>>>>>> b1
     width: 480px;
     height: 480px;
     margin: 50px auto;
@@ -19,10 +22,14 @@
     border-radius: 25px;
 }
 
+<<<<<<< HEAD
 #img{
     height: 200px;
     width: 200px;
     background-size: cover;
+=======
+img{
+>>>>>>> b1
     border-radius: 50%;
 }
 
@@ -34,6 +41,7 @@ section{
 }
 body{
     background-color: black;
+<<<<<<< HEAD
 }
 
 #vbar{
@@ -41,3 +49,6 @@ body{
     bottom: 15px;
     z-index: 2;
 }
+=======
+}
+>>>>>>> b1
